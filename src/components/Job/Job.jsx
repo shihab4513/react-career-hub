@@ -1,8 +1,9 @@
 import React from 'react'
 import { IoLocationOutline } from "react-icons/io5";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { Link } from 'react-router-dom';
 const Job = ({job}) => {
-    const {logo,job_title,company_name,location,remote_or_onsite,salary,job_type}=job;
+    const {id,logo,job_title,company_name,location,remote_or_onsite,salary,job_type}=job;
   return (
     <div className="card bg-base-100 shadow-sm">
   <figure>
@@ -23,7 +24,8 @@ const Job = ({job}) => {
     </div>
     
     <div className="card-actions">
-      <button className="btn btn-primary">View Details</button>
+      <Link to={`/job/${id}`}><button className="btn btn-primary">View Details</button></Link>
+      
     </div>
   </div>
 </div>
